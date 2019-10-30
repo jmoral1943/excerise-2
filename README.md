@@ -44,10 +44,15 @@ The first part of the program takes in a CLI argument to the file path for which
 The listFiles function traverses any directory and searches for any golang files no matter how deep the 
 folders get.
 
-### Concurrently scanning the file and looks for imports
+### Concurrently runs command to list all imports in a file 
 
-The program then opens and scans the file and looks for imports where it puts them into a slice concurrently.
-With creating as many go routines as needed.
+```
+go list -f {{.Imports}}
+```
+
+To instead of going line by line it gives me the imports for a file then I have 
+splice of imports to have a JSON Object.
+
 
 ### Transfers the data to an JSON Object
 
